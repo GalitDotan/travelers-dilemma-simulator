@@ -1,30 +1,8 @@
 import random
 from collections import Counter
 
-CLASS_SIZE = 70
-OPT_CHOOSERS = 60
-SMALLEST = 96
-LARGEST = 100
-
-OPT_CHOICE = 97
-
-GAMES_AMOUNT = 2500
-SIMULATIONS_AMOUNT = 5000
-
-
-class Student:
-    def __init__(self, choice: int):
-        self.choice: int = choice
-        self.sum_utility: int = 0
-        self.games_count: int = 0
-
-    def __repr__(self):
-        return f"Choice: {self.choice}, Average utility: {self.average_utility()}"
-
-    def average_utility(self):
-        if self.games_count == 0:
-            return 0
-        return self.sum_utility / self.games_count
+from consts import GAMES_AMOUNT, SIMULATIONS_AMOUNT
+from student import Student
 
 
 def travelers_dilemma(student1: Student, student2: Student) -> tuple[int, int]:
